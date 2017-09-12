@@ -1,0 +1,55 @@
+
+{
+	'targets':[
+		{
+			'target_name':'libavfilter',
+			'type':'shared_library',
+			'includes':[
+				'common.gypi',
+			],
+			'variables':{
+				'src_path':'../libavfilter',
+			},
+			'sources':[
+				'../config.h',
+				'<(src_path)/allfilters.c', 
+    			'<(src_path)/avfilter.c', 
+    			'<(src_path)/avfiltergraph.c', 
+    			'<(src_path)/defaults.c', 
+    			'<(src_path)/formats.c', 
+    			'<(src_path)/graphparser.c', 
+    			'<(src_path)/parseutils.c', 
+    			'<(src_path)/vf_aspect.c', 
+    			'<(src_path)/vf_crop.c', 
+    			'<(src_path)/vf_format.c', 
+    			'<(src_path)/vf_null.c', 
+    			'<(src_path)/vf_scale.c', 
+    			'<(src_path)/vf_slicify.c', 
+    			'<(src_path)/vf_unsharp.c', 
+    			'<(src_path)/vf_vflip.c', 
+    			'<(src_path)/vsink_nullsink.c', 
+    			'<(src_path)/vsrc_nullsrc.c', 
+    			'avfilter-1.def', 
+    			'<(src_path)/avfilter.h', 
+    			'<(src_path)/avfiltergraph.h', 
+    			'<(src_path)/graphparser.h', 
+    			'<(src_path)/parseutils.h', 
+			],
+			'dependencies':[
+				'libavutil.gyp:*',
+				'libswscale.gyp:*',
+				'libavcodec.gyp:*',
+			],
+			'defines':[
+				'WIN32',
+				'_USRDLL',
+				'LIBAVUTIL_EXPORTS',
+			],
+			'include_dirs':[
+				'./external/include',
+				'../',
+			],
+
+		},
+	]
+}
